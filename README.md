@@ -17,4 +17,4 @@ With the connections.log you can then use sessions.sh to get a listing by connec
 
 And further break down the results of sessions.log into an accounting of how many connections occured from each host per second
 
-for ts in `cat sessions.log | cut -f 3 -d ' ' | sort | uniq`; do echo "$ts"; cat sessions.log | cut -f 1-3 -d ' ' | grep "$ts" | sort | uniq -c | sort -nr | cut -f 1 -d '.'; done > sessions_per_second.log
+for ts in \`cat sessions.log | cut -f 3 -d ' ' | sort | uniq\`; do echo "$ts"; cat sessions.log | cut -f 1-3 -d ' ' | grep "$ts" | sort | uniq -c | sort -nr | cut -f 1 -d '.'; done > sessions_per_second.log
